@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="892" height="693" viewBox="0 0 892 693">
+<rect width="100%" height="100%" rx="8" fill="#1d1c1a"/>
+<g fill="#5a5650"><circle cx="20" cy="16" r="5"/><circle cx="36" cy="16" r="5"/><circle cx="52" cy="16" r="5"/></g>
+<g font-family="Consolas, 'DejaVu Sans Mono', Menlo, monospace" font-size="14" xml:space="preserve" style="white-space:pre">
+<text x="18" y="48"><tspan fill="#e6e1d8" font-weight="bold">extsweep</tspan><tspan fill="#e6e1d8">&#160;&#160;Scanning&#160;browser&#160;extensions</tspan></text>
+<text x="18" y="67"></text>
+<text x="18" y="86"><tspan fill="#e6e1d8" font-weight="bold">Chrome&#160;/&#160;Default&#160;(Tony)</tspan></text>
+<text x="18" y="105"><tspan fill="#e6e1d8">&#160;&#160;</tspan><tspan fill="#e06c5a" font-weight="bold">CRITICAL</tspan><tspan fill="#e6e1d8">&#160;</tspan><tspan fill="#e6e1d8" font-weight="bold">Auto&#160;Refresh&#160;Plus&#160;&#160;7.4.2</tspan></text>
+<text x="18" y="124"><tspan fill="#e6e1d8">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan fill="#8a857b">id&#160;ffejlioijcokmblckiijnjcmfidjppdn,&#160;installed:&#160;from&#160;the&#160;store</tspan></text>
+<text x="18" y="143"></text>
+<text x="18" y="162"><tspan fill="#e6e1d8">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan fill="#e06c5a" font-weight="bold">*&#160;</tspan><tspan fill="#e6e1d8">Known&#160;malicious&#160;extension</tspan></text>
+<text x="18" y="181"><tspan fill="#e6e1d8">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;This&#160;extension&#160;id&#160;is&#160;on&#160;a&#160;public&#160;list&#160;of&#160;extensions&#160;that&#160;stole</tspan></text>
+<text x="18" y="200"><tspan fill="#e6e1d8">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;data,&#160;hijacked&#160;searches&#160;or&#160;injected&#160;ads.</tspan></text>
+<text x="18" y="219"><tspan fill="#e6e1d8">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&quot;Auto&#160;Refresh&#160;Plus&quot;,&#160;type:&#160;adware,&#160;browser-hijack,&#160;click-fraud,</tspan></text>
+<text x="18" y="238"><tspan fill="#e6e1d8">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;credential-theft,&#160;session-hijack,&#160;spyware,&#160;reported:&#160;2026-05-17,</tspan></text>
+<text x="18" y="257"><tspan fill="#e6e1d8">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;source:</tspan></text>
+<text x="18" y="276"><tspan fill="#e6e1d8">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;https://palant.info/2025/01/20/malicious-extensions-circumvent-googles-remote-code-ban/</tspan></text>
+<text x="18" y="295"><tspan fill="#e6e1d8">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Remove&#160;it&#160;now,&#160;then&#160;follow&#160;the&#160;steps&#160;at&#160;the&#160;end&#160;of&#160;this&#160;report.</tspan></text>
+<text x="18" y="314"></text>
+<text x="18" y="333"><tspan fill="#e6e1d8">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan fill="#6fb3b8">*&#160;</tspan><tspan fill="#e6e1d8">Can&#160;read&#160;and&#160;change&#160;every&#160;website&#160;(scripting)</tspan></text>
+<text x="18" y="352"><tspan fill="#e6e1d8">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;It&#160;runs&#160;on&#160;every&#160;site&#160;you&#160;open&#160;and&#160;can&#160;read&#160;what&#160;is&#160;on&#160;the&#160;page,</tspan></text>
+<text x="18" y="371"><tspan fill="#e6e1d8">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;including&#160;what&#160;you&#160;type,&#160;and&#160;change&#160;it.</tspan></text>
+<text x="18" y="390"><tspan fill="#e6e1d8">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Normal&#160;for&#160;ad&#160;blockers&#160;and&#160;password&#160;managers.&#160;Keep&#160;it&#160;only&#160;if&#160;you</tspan></text>
+<text x="18" y="409"><tspan fill="#e6e1d8">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;trust&#160;the&#160;developer.</tspan></text>
+<text x="18" y="428"></text>
+<text x="18" y="447"><tspan fill="#e6e1d8">&#160;&#160;</tspan><tspan fill="#e06c5a">HIGH&#160;&#160;&#160;&#160;</tspan><tspan fill="#e6e1d8">&#160;</tspan><tspan fill="#e6e1d8" font-weight="bold">PDF&#160;Toolbox&#160;Pro&#160;&#160;2.1.0</tspan></text>
+<text x="18" y="466"><tspan fill="#e6e1d8">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan fill="#8a857b">id&#160;onkhcbmfbmkbmppdakcckaibnmonbheb,&#160;installed:&#160;from&#160;the&#160;store</tspan></text>
+<text x="18" y="485"></text>
+<text x="18" y="504"><tspan fill="#e6e1d8">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan fill="#e06c5a">*&#160;</tspan><tspan fill="#e6e1d8">Hard-coded&#160;Telegram&#160;or&#160;Discord&#160;upload</tspan></text>
+<text x="18" y="523"><tspan fill="#e6e1d8">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;The&#160;code&#160;contains&#160;a&#160;Telegram&#160;bot&#160;or&#160;Discord&#160;webhook&#160;address.</tspan></text>
+<text x="18" y="542"><tspan fill="#e6e1d8">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Stealers&#160;use&#160;these&#160;to&#160;send&#160;stolen&#160;data&#160;out.</tspan></text>
+<text x="18" y="561"><tspan fill="#e6e1d8">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;file:&#160;worker.js&#160;api.telegram.org/bot7348810255:AAFx********</tspan></text>
+<text x="18" y="580"><tspan fill="#e6e1d8">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Remove&#160;it&#160;and&#160;treat&#160;the&#160;browser&#x27;s&#160;saved&#160;logins&#160;as&#160;exposed.</tspan></text>
+<text x="18" y="599"></text>
+<text x="18" y="618"><tspan fill="#e6e1d8">&#160;&#160;</tspan><tspan fill="#e06c5a">HIGH&#160;&#160;&#160;&#160;</tspan><tspan fill="#e6e1d8">&#160;</tspan><tspan fill="#e6e1d8" font-weight="bold">Tab&#160;Notes&#160;&#160;0.3.1</tspan></text>
+<text x="18" y="637"><tspan fill="#e6e1d8">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan fill="#8a857b">id&#160;kmbnpdicmlhcbpdhfgjgnpppdmegnjmb,&#160;installed:&#160;unpacked&#160;(developer</tspan></text>
+<text x="18" y="656"><tspan fill="#e6e1d8">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;mode)</tspan></text>
+</g></svg>
