@@ -180,7 +180,7 @@ func checkExtension(e *Extension, db *iocDB, codeScan bool) []Finding {
 				"EXT022": medium,
 				"EXT023": pick(e, medium, high),
 			}[h.rule]
-			out = append(out, Finding{Rule: h.rule, Severity: sev, Ext: e, File: h.file, Evidence: h.evidence})
+			out = append(out, Finding{Rule: h.rule, Severity: sev, Ext: e, File: safeText(h.file), Evidence: safeText(h.evidence)})
 		}
 	}
 	return out
@@ -193,6 +193,7 @@ func checkPolicies(forced []forcedInstall, db *iocDB) []Finding {
 	var out []Finding
 	for i := range forced {
 		f := forced[i]
+		f.ID, f.UpdateURL, f.Where = safeText(f.ID), safeText(f.UpdateURL), safeText(f.Where)
 		var sev severity
 		var ioc *iocEntry
 		if hit, ok := db.lookup(f.ID); ok && !hit.Weak {

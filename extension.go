@@ -9,6 +9,7 @@ import (
 	"strconv"
 	"strings"
 	"time"
+	"unicode"
 )
 
 // Install sources, from most to least trusted.
@@ -498,4 +499,44 @@ func sortExtensions(es []*Extension) {
 		}
 		return es[i].ID < es[j].ID
 	})
+}
+
+// safeText drops control characters and bidi overrides from text that comes
+// from outside: extension names, versions, URLs, registry values, the bad
+// list. A malicious extension could otherwise put terminal escape codes in
+// its name and rewrite or hide lines of the report.
+func safeText(s string) string {
+	clean := true
+	for _, r := range s {
+		if unsafeRune(r) {
+			clean = false
+			break
+		}
+	}
+	if clean {
+		return s
+	}
+	var b strings.Builder
+	for _, r := range s {
+		if !unsafeRune(r) {
+			b.WriteRune(r)
+		}
+	}
+	return b.String()
+}
+
+func unsafeRune(r rune) bool {
+	return unicode.IsControl(r) || (r >= 0x202A && r <= 0x202E) || (r >= 0x2066 && r <= 0x2069) || r == 0x200E || r == 0x200F
+}
+
+// sanitize cleans every outside string on an extension before it is reported.
+func (e *Extension) sanitize() {
+	e.ID, e.Name, e.Version = safeText(e.ID), safeText(e.Name), safeText(e.Version)
+	e.UpdateURL, e.Profile, e.Browser = safeText(e.UpdateURL), safeText(e.Profile), safeText(e.Browser)
+	for i := range e.Permissions {
+		e.Permissions[i] = safeText(e.Permissions[i])
+	}
+	for i := range e.Hosts {
+		e.Hosts[i] = safeText(e.Hosts[i])
+	}
 }

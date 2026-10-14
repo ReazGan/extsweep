@@ -501,3 +501,46 @@ func itoa(n int64) string {
 	b, _ := json.Marshal(n)
 	return string(b)
 }
+
+func TestHostileNamesCannotHide(t *testing.T) {
+	db := testDB(t)
+	bad := pickIOC(t, db, false)
+	root := filepath.Join(t.TempDir(), "User Data")
+	prof := filepath.Join(root, "Default")
+	esc := string(rune(0x1b))
+	// clear the line, move the cursor up, and flip text direction
+	name := "Helper" + esc + "[2K" + esc + "[1A\r" + string(rune(0x202E)) + "x"
+	writeJSON(t, filepath.Join(prof, "Extensions", bad, "1.0", "manifest.json"), fx{"name": name, "version": "1.0" + esc + "[8m", "manifest_version": 3})
+	writeJSON(t, filepath.Join(prof, "Secure Preferences"), fx{"extensions": fx{"settings": fx{
+		bad: fx{"location": 1, "from_webstore": true, "path": filepath.Join(bad, "1.0")},
+	}}})
+	var out, errb bytes.Buffer
+	run([]string{"-lang", "en", "-no-color", root}, &out, &errb)
+	text := out.String()
+	if strings.ContainsRune(text, 0x1b) || strings.ContainsRune(text, '\r') || strings.ContainsRune(text, 0x202E) {
+		t.Fatalf("control characters reached the report: %q", text)
+	}
+	if !strings.Contains(text, "Helper[2K[1Ax") || !strings.Contains(text, "CRITICAL") {
+		t.Errorf("extension should still be reported, sanitized:\n%s", text)
+	}
+	out.Reset()
+	run([]string{"-json", root}, &out, &errb)
+	if strings.Contains(out.String(), `\u001b`) {
+		t.Error("control characters reached the JSON report")
+	}
+}
+
+func TestWalkStopsOnHugeFolders(t *testing.T) {
+	old := maxEntries
+	maxEntries = 10
+	defer func() { maxEntries = old }()
+	dir := t.TempDir()
+	for i := 0; i < 30; i++ {
+		writeFile(t, filepath.Join(dir, "d"+itoa(int64(i)), "a.js"), "x")
+	}
+	visited := 0
+	walkDir(dir, func(string, []byte) { visited++ })
+	if visited == 0 || visited >= 30 {
+		t.Errorf("visited %d files, want the walk cut short", visited)
+	}
+}

@@ -151,7 +151,7 @@ func profilesIn(browser, dir string, firefox bool) []Profile {
 		}
 		label := n
 		if friendly := names[n]; friendly != "" && friendly != n {
-			label = n + " (" + friendly + ")"
+			label = n + " (" + safeText(friendly) + ")"
 		}
 		out = append(out, Profile{Browser: browser, Name: label, Path: p})
 	}

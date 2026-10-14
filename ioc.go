@@ -79,7 +79,7 @@ func loadIOC(extra string) (*iocDB, error) {
 				continue
 			}
 			id, name, _ := strings.Cut(line, " ")
-			db.entries[strings.ToLower(id)] = iocEntry{Name: strings.TrimSpace(name), Origin: "your list"}
+			db.entries[strings.ToLower(id)] = iocEntry{Name: safeText(strings.TrimSpace(name)), Origin: "your list"}
 			n++
 		}
 		if err := sc.Err(); err != nil {
@@ -108,7 +108,7 @@ func (db *iocDB) addTSV(r io.Reader, origin string) (int, error) {
 		for len(f) < 6 {
 			f = append(f, "")
 		}
-		db.entries[strings.ToLower(f[0])] = iocEntry{Name: f[1], Threat: f[2], Added: f[3], Ref: f[4], Origin: origin, Weak: f[5] == "weak"}
+		db.entries[strings.ToLower(f[0])] = iocEntry{Name: safeText(f[1]), Threat: safeText(f[2]), Added: safeText(f[3]), Ref: safeText(f[4]), Origin: origin, Weak: f[5] == "weak"}
 		n++
 	}
 	return n, sc.Err()

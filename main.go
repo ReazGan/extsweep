@@ -148,9 +148,10 @@ func scan(profiles []Profile, db *iocDB, codeScan bool) *Result {
 	for _, p := range profiles {
 		exts, err := readProfile(p)
 		if err != nil {
-			r.Errors = append(r.Errors, fmt.Sprintf("%s / %s: %v", p.Browser, p.Name, err))
+			r.Errors = append(r.Errors, safeText(fmt.Sprintf("%s / %s: %v", p.Browser, p.Name, err)))
 		}
 		for _, e := range exts {
+			e.sanitize()
 			r.Extensions = append(r.Extensions, e)
 			r.Findings = append(r.Findings, checkExtension(e, db, codeScan)...)
 		}

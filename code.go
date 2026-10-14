@@ -16,6 +16,9 @@ const (
 	maxTotal     = 40 << 20
 )
 
+// maxEntries caps how many files and folders one extension folder may have.
+var maxEntries = 20000
+
 type codeHit struct {
 	rule     string
 	file     string
@@ -113,10 +116,15 @@ func codeFile(name string) bool {
 }
 
 func walkDir(root string, visit func(string, []byte)) {
-	files, total := 0, 0
+	files, total, entries := 0, 0, 0
 	filepath.WalkDir(root, func(p string, d fs.DirEntry, err error) error {
 		if err != nil {
 			return nil
+		}
+		// An unpacked extension path comes from the profile and could point
+		// at a whole drive; stop instead of walking it.
+		if entries++; entries > maxEntries {
+			return fs.SkipAll
 		}
 		if d.IsDir() {
 			if d.Name() == "_metadata" || d.Name() == "node_modules" {
